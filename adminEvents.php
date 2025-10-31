@@ -1,0 +1,1 @@
+<h1>Welcome to Admin Events Page</h1><p>This is the admin dashboard.</p>
