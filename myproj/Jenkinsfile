@@ -1,0 +1,17 @@
+// Simple Jenkins pipeline for PHP linting
+pipeline {
+  agent any
+  stages {
+    stage('PHP lint') {
+      steps {
+        // This runs the CI helper PHP script which lints PHP files
+        sh 'php tests/ci.php'
+      }
+    }
+  }
+  post {
+    always {
+      archiveArtifacts allowEmptyArchive: true, artifacts: 'tests/ci-output.txt'
+    }
+  }
+}
