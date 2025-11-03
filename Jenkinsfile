@@ -15,6 +15,19 @@ pipeline {
             }
         }
 
+        stage('Build') {
+            steps {
+                script {
+                    if (fileExists('composer.json')) {
+                        echo "Installing dependencies with Composer..."
+                        bat "composer install"
+                    } else {
+                        echo "No composer.json found. Skipping dependency installation."
+                    }
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 echo "Starting XAMPP (Apache + MySQL)..."
