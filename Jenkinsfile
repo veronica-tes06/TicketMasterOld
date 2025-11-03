@@ -54,7 +54,7 @@ pipeline {
         failure {
             echo "Pipeline failed!"
             bat "${XAMPP_PATH}\\xampp_stop.exe"
-            mail to: 'a00320733@student.tus.com', 
+            mail to: 'a00320733@student.tus.ie', 
             subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}", 
             body: "Check Jenkins logs: ${env.BUILD_URL}" 
         }
