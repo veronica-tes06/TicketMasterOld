@@ -1,1 +1,0 @@
-<h1>Welcome to Events Page</h1><p>This is the user home page.</p>
