@@ -1,5 +1,4 @@
 <?php
-// pdo connection file (copied from shamcode config)
 try {
     $dsn = 'mysql:host=localhost;dbname=ticketmaster';
     $username = 'root';

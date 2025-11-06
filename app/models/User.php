@@ -1,5 +1,5 @@
 <?php
-// Simple User model for myproj
+// Simple User model (moved from myproj)
 class User {
     private $id;
     private $email;

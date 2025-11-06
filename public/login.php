@@ -1,5 +1,5 @@
 <?php
-// Entry point for registration (public)
+// Entry point for login (moved to public/)
 require_once __DIR__ . '/../app/controllers/AuthController.php';
 
 $error = '';
@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password'] ?? '');
 
     $controller = new AuthController();
-    $error = $controller->register($email, $password);
+    $error = $controller->login($email, $password);
 }
 
 // show view
-require __DIR__ . '/../app/views/auth/register.php';
+require __DIR__ . '/../app/views/login.php';

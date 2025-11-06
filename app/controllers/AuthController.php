@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../models/User.php';
 
 class AuthController {
-    // Shared validation inside the controller per your request
     private function validateCredentials(string $email, string $password): array {
         $error = '';
 
@@ -17,6 +16,7 @@ class AuthController {
         } elseif (strlen($email) < 1 || strlen($email) > 30) {
             $error = 'Email must be between 1 and 30 characters (including @gmail.com).';
         }
+        
         // validate password format
         elseif (!preg_match('/^[A-Za-z0-9]{8,20}$/', $password)) {
             $error = 'Password must be 8 to 20 characters long and only contain letters or numbers.';
